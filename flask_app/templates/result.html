@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prediction Results</title>
+  </head>
+  <body>
+    <h1>Prediction Results</h1>
+    <img src="{{ url_for('send_file', filename=image_path) }}" alt="Uploaded Image">
+    <ul>
+      {% for condition, score in results.items() %}
+        <li>{{ condition }}: {{ score }}%</li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('upload_file') }}">Go Back</a>
+  </body>
+</html>
